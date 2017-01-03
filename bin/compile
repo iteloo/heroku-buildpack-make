@@ -8,5 +8,7 @@ if [ -e "$STACK_WORK_DIR" ]; then
     cp -Rp "$STACK_WORK_DIR" "$1"
 fi
 
+export STACK_ROOT=$STACK_ROOT_DIR
+
 echo "Running make"
 make
