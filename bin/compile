@@ -1,4 +1,12 @@
 #!/bin/bash
 echo "-----> Found a Makefile"
 cd $1
+
+########## project build ###########################################
+if [ -e "$STACK_WORK_DIR" ]; then
+    speak "Restoring .stack-work"
+    cp -Rp "$STACK_WORK_DIR" "$1"
+fi
+
+echo "Running make"
 make
